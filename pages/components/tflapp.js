@@ -29,7 +29,7 @@ function TFLProject() {
           </div> */}
         </div>
       </a>
-      <img
+      <Image
         alt="London Transport Site Preview"
         loading="lazy"
         width="1324"

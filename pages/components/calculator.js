@@ -18,7 +18,7 @@ function Calculator() {
           </ul>
         </div>
       </a>
-      <img
+      <Image
         alt="Calculator Project Preview"
         loading="lazy"
         width="1324"

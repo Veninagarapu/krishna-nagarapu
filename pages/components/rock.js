@@ -18,7 +18,7 @@ function Rock() {
           </ul>
         </div>
       </a>
-      <img
+      <Image
         alt="Rock Paper Scissors Game Preview"
         loading="lazy"
         width="1324"

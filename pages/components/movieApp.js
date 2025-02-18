@@ -28,7 +28,7 @@ function MovieAppProject() {
           </div> */}
         </div>
       </a>
-      <img
+      <Image
         alt="Movie App Preview"
         loading="lazy"
         width="1324"

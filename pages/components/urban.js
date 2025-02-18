@@ -17,7 +17,7 @@ function Urban() {
           </ul>
         </div>
       </a>
-      <img
+      <Image
         alt="Urban Fashion Home Page Preview"
         loading="lazy"
         width="1324"

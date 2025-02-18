@@ -23,7 +23,7 @@ function EcommerceProject() {
         </ul>
       </div>
     </a>
-    <img
+    <Image
       alt="E-commerce Site Preview"
       loading="lazy"
       width="1324"
