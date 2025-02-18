@@ -166,7 +166,8 @@ export default function Home() {
             <div className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]">
               <h2 className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5]">
                 <span className="font-bold sm:text-4xl">Krishna Nagarapu</span>
-                <p>I'm a developer passionate about <span className="font-bold">programming.</span></p>
+                <p>I&apos;m a developer passionate about <span className="font-bold">programming.</span></p>
+
                 My background encompasses Web Development & Structural Engineering
               </h2>
 
@@ -178,6 +179,7 @@ export default function Home() {
                             dark:bg-white/10 dark:text-white/60" 
                   href="https://www.linkedin.com/in/krishna-nagarapu/" 
                   target="_blank"
+                  rel="noreferrer"
                 >
               <BsLinkedin />
                 </a>
@@ -189,6 +191,7 @@ export default function Home() {
                             transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60" 
                   href="https://github.com/Veninagarapu" 
                   target="_blank"
+                  rel="noreferrer"
                 >
                 <BsGithub/>
                 </a>
@@ -259,8 +262,8 @@ export default function Home() {
                     ) : null}
                     {projectType === "past" ? (
                       <>
-                        <Calculator />
-                        <Rock />
+                        {/* <Calculator />
+                        <Rock /> */}
                         {/* <Urban /> */}
                       </>
                     ) : null}
