@@ -2,7 +2,8 @@ import Head from "next/head";
 import { BsFillMoonStarsFill, BsSun, BsLinkedin, BsGithub } from "react-icons/bs";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Link } from 'react-scroll';
+
+import ScrollSpy from "react-ui-scrollspy";
 import ProjectsCard from './projects_card';
 import Skills from "./components/skills.js";
 import TFLProject from "./components/tflapp.js";
@@ -57,17 +58,23 @@ export default function Home() {
   
   // Set active section
   const handleSetActive = (to) => {
+    console.log("Active Section:", to); // ✅ Debugging
     setActiveSection(to);
+
   };
 
-
-  const navLinks = [
-    { to: "about", text: "About", offset: -200 },
-    { to: "projects", text: "Projects", offset: -130 },
-    { to: "skills", text: "Skills", offset: -180 },
-    { to: "experience", text: "Experience", offset: -160 },
-  ];
+  const onPress = (e) => {
+    e.preventDefault();
+    const target = window.document.getElementById(
+      e.currentTarget.href.split("#")[1]
+    );
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   
+
+
   return (
     <div className={darkMode ? "dark" : ""}>
       <div className="__className_a64ecd bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90">
@@ -87,30 +94,78 @@ export default function Home() {
           )}
 
           <nav className="flex fixed top-[0.15rem] left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
-           <ul className="flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[0.9rem] font-medium text-gray-500 sm:w-[initial] sm:flex-nowrap sm:gap-5 dark:text-gray-300">
-  {navLinks.map((link) => (
-    <li key={link.to} className="h-3/4 flex items-center justify-center relative">
-      <Link
-        to={link.to}
-        activeclass="active"
-        smooth={true}
-        offset={link.offset}
-        duration={500}
-        spy={true}
-        onSetActive={() => handleSetActive(link.to)}
-        className="flex cursor-pointer w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:hover:text-gray-300 text-gray-950 dark:text-gray-200"
-      >
-        {link.text}
-        <span className="hidden bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-purple-900 transition-all duration-200"></span>
-      </Link>
-    </li>
-  ))}
-</ul>
+          <ul className="flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[0.9rem] font-medium text-gray-500 sm:w-[initial] sm:flex-nowrap sm:gap-5 dark:text-gray-300">
+              <li className="h-3/4 flex items-center justify-center relative">
+                <a
+                 onClick={(e) => onPress(e)} href="#about"
+                
+                  className="flex cursor-pointer w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:hover:text-gray-300 text-gray-950 dark:text-gray-200"
+                >
+                  About
+                  <span
+                   data-to-scrollspy-id="about"
+                    className="hidden cursor-pointer bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-purple-900 transition-all duration-200"
+                  ></span>
+                </a>
+              </li>
+
+              <li className="h-3/4 flex items-center justify-center relative">
+                <a
+                  onClick={(e) => onPress(e)} href="#projects"
+               
+                  className="flex cursor-pointer w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:hover:text-gray-300 text-gray-950 dark:text-gray-200"
+                >
+                  Projects
+                  <span
+                     data-to-scrollspy-id="projects"
+                    className="hidden bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-purple-900 transition-all duration-200"
+                   
+                  ></span>
+                </a>
+              </li>
+
+              <li className="h-3/4 flex items-center justify-center relative">
+                <a
+                  onClick={(e) => onPress(e)} href="#skills"
+                 
+                  className="flex cursor-pointer w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:hover:text-gray-300 text-gray-950 dark:text-gray-200"
+                >
+                  Skills
+                  <span
+                   data-to-scrollspy-id="skills"
+                    className="hidden bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-purple-900 transition-all duration-200"
+                  ></span>
+                </a>
+              </li>
+
+              <li className="h-3/4 flex items-center justify-center relative">
+                <a
+                  onClick={(e) => onPress(e)} href="#experience"
+               
+                  className="flex cursor-pointer w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:hover:text-gray-300 text-gray-950 dark:text-gray-200"
+                >
+                  Experience
+                  <span
+                     data-to-scrollspy-id="experience"
+                    className="hidden bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-purple-900 transition-all duration-200"
+                    
+                  ></span>
+                </a>
+              </li>
+            </ul>
           </nav>
         </header>
 
         <main className="z-[99] relative flex flex-col items-center px-4">
           {/* Hero Section */}
+          <ScrollSpy
+          scrollThrottle={100}
+          // onUpdateCallback={(id) => console.log(id)}
+          useBoxMethod={false}
+          onUpdateCallback={handleSetActive}
+          >
+
+    
           <section className="flex flex-col items-center px-4" id="about">
             <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-20 h-20 relative overflow-hidden mt-6 md:h-20 md:w-20">
               <Image src='/krish.png' layout="fill" objectFit="cover" />
@@ -166,8 +221,10 @@ export default function Home() {
               </p>
             </section>
           </section>
+     
 
           {/* Projects Section */}
+       
           <section className="scroll-mt-28 mb-28" id="projects">
             <section className="portfolio max-w-[70rem] text-center" id="portfolio">
               {/* P O R T F O L I O */}
@@ -228,11 +285,15 @@ export default function Home() {
               </div>
             </section>
           </section>  
+      
 
           {/* Skills Section */}
-          <section id="skills" className="mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28">
+      
+          <section id="skills" className="flex flex-col justify-center mx-auto
+          mb-20 max-w-[45rem] items-center text-center leading-8 sm:mb-28 scroll-mt-28">
           <Skills/>
           </section>
+       
       
           {/* Experience Section */}
           <section className="scroll-mt-28 mb-28" id="experience">
@@ -376,6 +437,7 @@ export default function Home() {
               </div>
             </div>
           </section>
+          </ScrollSpy>
 
         <ContactForm/>       
         </main>
