@@ -156,7 +156,7 @@ export default function Home() {
     
           <section className="flex flex-col items-center px-4" id="about">
             <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-20 h-20 relative overflow-hidden mt-6 md:h-20 md:w-20">
-              <Image src='/krish.png' layout="fill" objectFit="cover" />
+              <Image src='/krish.png' alt="" layout="fill" objectFit="cover" />
             </div>
 
             {/* <div>
@@ -204,8 +204,9 @@ export default function Home() {
             <section className="about-me mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28">
               <h2 className="text-3xl font-medium capitalize mb-8 text-center">ABOUT ME</h2>
               <p className="mb-3">
-                After completing my Master's in Structural Engineering, I decided to follow my passion for programming and enrolled in a web development bootcamp at Bath Spa University. My transition into tech was driven by countless hours of learning, practicing, and refining my coding skills.
-              </p>
+  After completing my Master&apos;s in Structural Engineering, I decided to follow my passion for programming and enrolled in a web development bootcamp at Bath Spa University. My transition into tech was driven by countless hours of learning, practicing, and refining my coding skills.
+</p>
+
 
               <p>
                 I gained valuable experience as a Web Developer at Cavendish Consultancy, contributing to various projects such as developing a survey app in React and managing WordPress-based websites. Prior to this, as a Junior Web Developer at Goodbody Health, I worked with PHP, Laravel, and WordPress to develop and maintain applications for health and wellness services.
