@@ -1,0 +1,68 @@
+.active span{
+    opacity: 100;
+  }
+  
+  
+  /* Default styles for <li> */
+  .nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 75%;
+    border-radius: 9999px; /* Equivalent to Tailwind's rounded-full */
+    /* transition: background-color 0.3s ease-in-out; */
+  }
+  
+  /* Default link styles */
+  .nav-link {
+    padding: 0.75rem;
+    text-decoration: none;
+    color: rgb(107, 114, 128); /* Equivalent to Tailwind's text-gray-500 */
+    /* transition: color 0.3s ease-in-out; */
+  }
+  
+  /* Hover effect for <li> */
+  .nav-item:hover {
+    background-color: rgb(243, 244, 246); /* Tailwind's bg-gray-100 */
+    /* transition:0.3s ease-in-out; */
+  }
+  
+  /* Dark mode hover effect */
+  .dark .nav-item:hover {
+    background-color: rgb(107, 33, 168); /* Tailwind's dark:bg-purple-900 */
+    color: white;
+    /* transition:0.3s ease-in-out; */
+  }
+  
+  
+  /* ✅ Style <li> when its child <Link> has the 'active' class */
+  .nav-item .nav-link.active {
+    color: rgb(17, 24, 39); /* Tailwind's text-gray-950 */
+    background-color: rgb(243, 244, 246); /* Tailwind's bg-gray-100 */
+    border-radius: 9999px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 75%;
+    /* transition: background-color 0.3s ease-in-out; */
+  }
+  
+  /* ✅ Dark mode support */
+  .dark .nav-item .nav-link.active {
+    color: rgb(229, 231, 235); /* Tailwind's dark:text-gray-300 */
+    background-color: rgb(107, 33, 168); /* Tailwind's dark:bg-purple-900 */
+    border-radius: 9999px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 75%;
+    /* transition: background-color 0.3s ease-in-out; */
+  }
+
+
+  .about-me{
+    margin-bottom: 5rem !important;
+  }
