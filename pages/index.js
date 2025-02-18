@@ -6,13 +6,7 @@ import Image from "next/image";
 import ScrollSpy from "react-ui-scrollspy";
 import ProjectsCard from './projects_card';
 import Skills from "./components/skills.js";
-import TFLProject from "./components/tflapp.js";
-import MovieAppProject from "./components/movieApp.js";
 import ContactForm from "./contactForm.js";
-import Calculator from "./components/calculator.js";
-import EcommerceProject from "./components/e-commerce.js";
-import Rock from "./components/rock.js";
-import Urban from "./components/urban.js";
 import krish from '../public/krish.png'
 import web1 from "../public/web1.png";
 import web2 from "../public/web2.png";
