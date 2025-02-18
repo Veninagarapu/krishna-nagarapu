@@ -6,6 +6,7 @@ import {br} from '../../public/br.png';
 import {escp} from '../../public/escp.png';
 import {nip} from '../../public/nip.png';
 import {survey} from '../../public/survey.png';
+import Image from "next/image";
 
 
 const Card = ({ title, description, image, tags, link, index }) => {
@@ -27,7 +28,8 @@ const Card = ({ title, description, image, tags, link, index }) => {
       className="card bg-gray-100 border border-black/5  w-72 rounded-lg overflow-hidden relative hover:bg-gray-200 transition  dark:text-white dark:bg-white/10 dark:hover:bg-white/20"
     >
       <div className="p-4 flex justify-center">
-        <Image src={image} alt={title} className="w-full h-32 object-cover" />
+        <Image src={image} alt={title}  width={500} // width as a ratio
+  height={128}  className="w-full h-32 object-cover" />
       </div>
       <div className="p-4 text-center">
         <a href={link} className="text-blue-500 text-lg font-semibold">
@@ -57,7 +59,7 @@ const CardContainer = () => {
       title: "Goodbody Health",
       description: "Wellness company operating in both wellness testing and cbd products",
       image:
-        "./goodbody.png",
+        "/goodbody.png",
       tags: ["Laravel", "PHP", "MySQL", "bootstrap"," jQuery", "Wordpress"],
       link: "https://health.goodbodyclinic.com/our-clinics/",
     },
@@ -65,7 +67,7 @@ const CardContainer = () => {
         title: "Cavendish Consultancy - South of Potters Bar",
         description: "South of Potters Bar Consulatation Website",
         image:
-        "./cav1.png",
+        "/cav1.png",
         tags: ["Wordpress", "PHP", "Sass"],
         link: "https://southofpottersbar.co.uk/",
       },
@@ -73,7 +75,7 @@ const CardContainer = () => {
         title: "Cavendish Consultancy - Barking Riverside",
         description: "Barking Riverside Consulatation Website",
         image:
-        "./br.png",
+        "/br.png",
         tags: ["Wordpress", "PHP", "Sass"],
         link: "https://barkingriverside-planning.london/",
       },
@@ -81,7 +83,7 @@ const CardContainer = () => {
         title: "Cavendish Consultancy - Neurodiversity in Planning",
         description: "Neurodiversity in Planning Consulatation Website",
         image:
-        "./nip.png",
+        "/nip.png",
         tags: ["Wordpress", "PHP", "Sass"],
         link: "https://neurodiversityinplanning.co.uk/",
       }, 
@@ -89,7 +91,7 @@ const CardContainer = () => {
         title: "Cavendish Consultancy - ESCP",
         description: "ESCP Business School Consulatation Website",
         image:
-        "./escp.png",
+        "/escp.png",
         tags: ["Wordpress", "PHP", "Sass"],
         link: "https://escpconsultation.co.uk/",
       },
@@ -97,7 +99,7 @@ const CardContainer = () => {
         title: "Cavendish Consultancy - Survey Application",
         description: "Survey Application for Consulataion websites",
         image:
-        "./survey.png",
+        "/survey.png",
         tags: ["React", "Laravel","PHP", "Sass"],
         link: "https://aldideptford.whatmatterstoyou.co.uk/",
       }

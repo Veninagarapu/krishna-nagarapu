@@ -1,5 +1,6 @@
 import React from "react";
-import tflimg from "../../public/tfl.png"
+import tflimg from "../../public/tfl.png";
+import Image from "next/image";
 function TFLProject() {
   return (
     <div className="project group mb-3 sm:mb-8 last:mb-0">

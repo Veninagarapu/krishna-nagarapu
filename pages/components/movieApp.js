@@ -1,5 +1,6 @@
 import React from "react";
 import movie from "../../public/movies.png"
+import Image from "next/image";
 
 function MovieAppProject() {
   return (

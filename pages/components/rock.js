@@ -1,5 +1,6 @@
 import React from "react";
-import rock from "../../public/rock.png"
+import rock from "../../public/rock.png";
+import Image from "next/image";
 
 function Rock() {
   return (

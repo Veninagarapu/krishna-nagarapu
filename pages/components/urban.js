@@ -1,5 +1,6 @@
 import React from "react";
-import urban from "../Images/urban.jpg"
+import urban from "../Images/urban.jpg";
+import Image from "next/image";
 
 function Urban() {
   return (

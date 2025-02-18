@@ -3,6 +3,7 @@ import codeimage from "../Images/smartmockups_l87v8wky.jpg"
 
 import e from "../../public/ecommerce.png"
 import e1 from "../../public/e-2.png"
+import Image from "next/image";
 
 
 function EcommerceProject() {

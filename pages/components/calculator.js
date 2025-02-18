@@ -1,5 +1,6 @@
 import React from "react";
 import calculator from "../../public/calc.png"
+import Image from "next/image";
 
 function Calculator() {
   return (
