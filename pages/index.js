@@ -2,8 +2,6 @@ import Head from "next/head";
 import { BsFillMoonStarsFill, BsSun, BsLinkedin, BsGithub } from "react-icons/bs";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-
-import ScrollSpy from "react-ui-scrollspy";
 import ProjectsCard from './projects_card';
 import Skills from "./components/skills.js";
 import ContactForm from "./contactForm.js";
@@ -60,8 +58,43 @@ export default function Home() {
       target.scrollIntoView({ behavior: "smooth" });
     }
   };
-  
+    
+  useEffect(() => {
+    const handleScrollSpy = () => {
+      const sections = document.querySelectorAll("#scrollspy-1 > section");
+      const navLinks = document.querySelectorAll("nav a");
 
+      const scrollPosition = window.scrollY + 100;
+
+      sections.forEach((section) => {
+        const top = section.offsetTop;
+        const bottom = top + section.offsetHeight;
+
+        if (scrollPosition >= top && scrollPosition < bottom) {
+          navLinks.forEach((link) => link.classList.remove("active"));
+          const activeLink = document.querySelector(`nav a[href="#${section.id}"]`);
+          if (activeLink) {
+            activeLink.classList.add("active");
+          }
+        }
+      });
+    };
+
+    // Throttling the event to optimize performance
+    let throttleTimeout = null;
+    const throttledScroll = () => {
+      if (!throttleTimeout) {
+        throttleTimeout = setTimeout(() => {
+          handleScrollSpy();
+          throttleTimeout = null;
+        }, 100); // Adjust throttle timing as needed
+      }
+    };
+
+    window.addEventListener("scroll", throttledScroll);
+
+    return () => window.removeEventListener("scroll", throttledScroll);
+  }, []);
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -81,17 +114,15 @@ export default function Home() {
             ></div>
           )}
 
-          <nav className="flex fixed top-[0.15rem] left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
+          <nav data-scrollspy="#scrollspy-1" data-scrollspy-scrollable-parent="#scrollspy-scrollable-parent-1" className="flex fixed top-[0.15rem] left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
           <ul className="flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[0.9rem] font-medium text-gray-500 sm:w-[initial] sm:flex-nowrap sm:gap-5 dark:text-gray-300">
               <li className="h-3/4 flex items-center justify-center relative">
-                <a
-                 onClick={(e) => onPress(e)} href="#about"
+                <a href="#about"
                 
-                  className="flex cursor-pointer w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:hover:text-gray-300 text-gray-950 dark:text-gray-200"
+                  className="scrollspy-active:active flex cursor-pointer w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:hover:text-gray-300 text-gray-950 dark:text-gray-200"
                 >
                   About
                   <span
-                   data-to-scrollspy-id="about"
                     className="hidden cursor-pointer bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-purple-900 transition-all duration-200"
                   ></span>
                 </a>
@@ -99,13 +130,13 @@ export default function Home() {
 
               <li className="h-3/4 flex items-center justify-center relative">
                 <a
-                  onClick={(e) => onPress(e)} href="#projects"
+                   href="#projects"
                
-                  className="flex cursor-pointer w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:hover:text-gray-300 text-gray-950 dark:text-gray-200"
+                  className="scrollspy-active:active flex cursor-pointer w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:hover:text-gray-300 text-gray-950 dark:text-gray-200"
                 >
                   Projects
                   <span
-                     data-to-scrollspy-id="projects"
+                 
                     className="hidden bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-purple-900 transition-all duration-200"
                    
                   ></span>
@@ -114,13 +145,13 @@ export default function Home() {
 
               <li className="h-3/4 flex items-center justify-center relative">
                 <a
-                  onClick={(e) => onPress(e)} href="#skills"
-                 
-                  className="flex cursor-pointer w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:hover:text-gray-300 text-gray-950 dark:text-gray-200"
+              
+                  href="#skills"
+                  className="scrollspy-active:active flex cursor-pointer w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:hover:text-gray-300 text-gray-950 dark:text-gray-200"
                 >
                   Skills
                   <span
-                   data-to-scrollspy-id="skills"
+            
                     className="hidden bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-purple-900 transition-all duration-200"
                   ></span>
                 </a>
@@ -128,13 +159,13 @@ export default function Home() {
 
               <li className="h-3/4 flex items-center justify-center relative">
                 <a
-                  onClick={(e) => onPress(e)} href="#experience"
+               href="#experience"
                
-                  className="flex cursor-pointer w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:hover:text-gray-300 text-gray-950 dark:text-gray-200"
+                  className="scrollspy-active:active flex cursor-pointer w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:hover:text-gray-300 text-gray-950 dark:text-gray-200"
                 >
                   Experience
                   <span
-                     data-to-scrollspy-id="experience"
+               
                     className="hidden bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-purple-900 transition-all duration-200"
                     
                   ></span>
@@ -144,16 +175,11 @@ export default function Home() {
           </nav>
         </header>
 
-        <main className="z-[99] relative flex flex-col items-center px-4">
+        <main id="scrollspy-scrollable-parent-1" className="z-[99] relative flex flex-col items-center px-4">
           {/* Hero Section */}
-          <ScrollSpy
-          scrollThrottle={100}
-          // onUpdateCallback={(id) => console.log(id)}
-          useBoxMethod={false}
-          onUpdateCallback={handleSetActive}
+          <div id="scrollspy-1"
           >
-
-    
+            
           <section className="flex flex-col items-center px-4" id="about">
             <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-20 h-20 relative overflow-hidden mt-6 md:h-20 md:w-20">
               <Image src='/krish.png' alt="" layout="fill" objectFit="cover" />
@@ -429,7 +455,7 @@ export default function Home() {
               </div>
             </div>
           </section>
-          </ScrollSpy>
+          </div>
 
         <ContactForm/>       
         </main>

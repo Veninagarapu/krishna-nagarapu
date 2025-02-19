@@ -10,10 +10,11 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
-
-
-.active-scroll-spy {
+.active span {
   display: block !important;
 }
 
@@ -29,7 +30,6 @@ a {
   font-family: "burtons";
   src: url("../public/Burtons.otf");
 }
-
 
 .transition {
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;
