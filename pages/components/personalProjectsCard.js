@@ -7,7 +7,8 @@ import {escp} from '../../public/escp.png';
 import {nip} from '../../public/nip.png';
 import {survey} from '../../public/survey.png';
 import {tfl} from "../../public/tfl.png";
-import movie from "../../public/movies.png"
+import {login} from "../../public/login.png";
+import movie from "../../public/movies.png";
 import Image from "next/image";
 
 
@@ -65,6 +66,15 @@ const PersonalCardContainer = () => {
       tags: ["JavaScript","HTML", "CSS"],
       link: "https://ecommerce-eta-six-19.vercel.app/index.html",
     },
+    {
+      title: "React Authentication",
+      description: "React authentication system with login, protected routes, and persistent auth using Context API.",
+      image:
+        "/login.png",
+      tags: ["React", "Auth", "Context API"],
+      link: "https://github.com/Veninagarapu/React-Authentication-System-with-Protected-Routes",
+    },
+
     {
         title: "London Transport Site",
         description: "This React app uses the TFL Unified API and allows users to plan their journey.",
