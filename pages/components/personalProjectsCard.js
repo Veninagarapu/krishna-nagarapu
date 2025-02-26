@@ -74,7 +74,6 @@ const PersonalCardContainer = () => {
       tags: ["React", "Auth", "Context API"],
       link: "https://github.com/Veninagarapu/React-Authentication-System-with-Protected-Routes",
     },
-
     {
         title: "London Transport Site",
         description: "This React app uses the TFL Unified API and allows users to plan their journey.",
