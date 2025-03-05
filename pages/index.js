@@ -358,7 +358,7 @@ export default function Home() {
                   <h3 className="font-semibold capitalize">Web Developer - Cavendish Consultancy • Hybrid</h3>
                   <p className="font-normal !mt-0">Southampton, England, UK</p>
                   <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
-                    At Cavendish Consultancy, I developed and managed multiple custom WordPress projects, implemented new features, built a React-based survey app, and collaborated with UX and marketing teams. My expertise includes React, PHP, HTML, CSS, JavaScript, Sass, Git, VS Code, Adobe XD, Photoshop, and FileZilla. I also integrated APIs, optimized UI/UX, and provided Google Analytics tracking and reports.
+                    At Cavendish Consultancy, I developed and managed multiple custom WordPress projects, implemented new features, built a React-based survey app, and collaborated with UX and marketing teams. My expertise includes React, PHP, HTML, CSS, JavaScript, Sass, Git, VS Code, Adobe XD, Photoshop, and FileZilla. I also integrated APIs, enhanced UI/UX, and provided Google Analytics tracking and reports.
                   </p>
                   <span className="vertical-timeline-element-date">May 2023 - July 2024</span>
                 </div>
