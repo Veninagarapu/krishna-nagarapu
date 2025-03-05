@@ -100,7 +100,7 @@ const CardContainer = () => {
         description: "Survey Application for Consulataion websites",
         image:
         "/survey.png",
-        tags: ["React", "Redux", "Context API", "Sass"],
+        tags: ["React", "Redux", "Context API"],
         link: "https://aldideptford.whatmatterstoyou.co.uk/",
       }
     // Add more projects if needed
